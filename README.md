@@ -13,6 +13,9 @@ Custom Alpine image with required softwares
 ### To Build and Upload the docker image to repository 
 `make docker`
 
+### To Run the docker image on logged-in Kubernetes cluser
+`make kubernetes-run`
+
 ## Installed Softwares:
 1. Git
 
