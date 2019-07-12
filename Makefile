@@ -21,4 +21,5 @@ docker-run:
 	docker run -it --rm --net host ${DOCKER_TAG_C} /bin/bash
 
 kubernetes-run:
+	@echo "Image will be deleted from the Kubernetes cluster after exit"
 	kubectl run alpine-custom --rm -i --tty --image pratikmahajan/alpine-custom:latest -- bash
