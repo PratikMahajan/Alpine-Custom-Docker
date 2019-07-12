@@ -1,6 +1,6 @@
 .PHONY: docker \
 	docker-build docker-push \
-	docker-run  
+	docker-run kubernetes-run 
 
 DOCKER_TAG_VERSION ?= latest
 DOCKER_TAG_C ?= pratikmahajan/alpine-custom:${DOCKER_TAG_VERSION}
@@ -20,3 +20,5 @@ docker-push:
 docker-run:
 	docker run -it --rm --net host ${DOCKER_TAG_C} /bin/bash
 
+kubernetes-run:
+	kubectl run alpine-custom --rm -i --tty --image pratikmahajan/alpine-custom:latest -- bash
