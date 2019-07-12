@@ -12,14 +12,15 @@ docker: docker-build docker-push
 docker-build:
 	docker build -t ${DOCKER_TAG_C} .
 
-# Push the docker image for bot-api to docker hub
+# Push the docker image to docker hub
 docker-push:
 	docker push ${DOCKER_TAG_C}
 
-# Runs the bot-api docker image on local machine
+# Runs the docker image on local machine
 docker-run:
 	docker run -it --rm --net host ${DOCKER_TAG_C} /bin/bash
 
+# Runs the docker image on logged-in kubernetes cluster
 kubernetes-run:
 	@echo "Image will be deleted from the Kubernetes cluster after exit"
 	kubectl run alpine-custom --rm -i --tty --image pratikmahajan/alpine-custom:latest -- bash
