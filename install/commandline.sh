@@ -27,4 +27,6 @@ apk add bash
 
 header_text "Installing wget and bind-utils"
 apk add wget bind-tools
- 
+
+header_text "Install Curl"
+apk add curl 

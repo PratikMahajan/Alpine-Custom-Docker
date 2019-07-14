@@ -6,5 +6,7 @@ COPY install /install
 RUN chmod 777 -R /install
 
 RUN ["./install/commandline.sh"]
+RUN ["./install/cloud.sh"]
 
-ENTRYPOINT /bin/sh
+USER cloud
+ENTRYPOINT /bin/bash
