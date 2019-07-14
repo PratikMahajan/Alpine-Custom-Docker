@@ -20,4 +20,11 @@ function header_text {
 
 
 header_text  "Installing Git"
-apk add git 
+apk add git
+
+header_text "Installing Bash"
+apk add bash 
+
+header_text "Installing wget and bind-utils"
+apk add wget bind-tools
+ 

@@ -2,7 +2,9 @@ FROM alpine:latest
 
 RUN apk update && apk add bash
 
-COPY installer.sh /installer.sh
-RUN chmod 777 /installer.sh
+COPY install /install
+RUN chmod 777 -R /install
 
-RUN ["./installer.sh"]
+RUN ["./install/commandline.sh"]
+
+ENTRYPOINT /bin/sh
